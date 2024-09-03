@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Airways-Vuelos</title>
+    <link rel="stylesheet" href="styles-Vuelos.css">
+</head>
+<body>
+    <header>
+        <img src="./IMAGES/./logoInfinityAirways.png" alt="">
+    </header>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="Home.html">Inicio</a></li>
+            <li><a href="Vuelos.html">Vuelos</a></li>
+            <li><a href="Ofertas.html">Ofertas</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <div class="buscador-vuelos">
+        <div class="opciones-viaje">
+            <label>
+                <input type="radio" name="tipo-viaje" checked>
+                Ida y vuelta
+            </label>
+            <label>
+                <input type="radio" name="tipo-viaje">
+                Solo ida
+            </label>
+        </div>
+        <div class="formulario-vuelo">
+            <div class="campo">
+                <label>Origen</label>
+                <input type="text" placeholder="Origen">
+            </div>
+            <div class="campo">
+                <label>Destino</label>
+                <input type="text" placeholder="Destino">
+            </div>
+            <div class="campo">
+                <label>Ida</label>
+                <input type="date" value="2024-09-05">
+            </div>
+            <div class="campo">
+                <label>Vuelta</label>
+                <input type="date" value="2024-09-08">
+            </div>
+            <div class="campo">
+                <label>Pasajeros</label>
+                <input type="number" min="1" value="1">
+            </div>
+            <button class="boton-buscar">Buscar</button>
+        </div>
+    </div>
+</body>
+</html>

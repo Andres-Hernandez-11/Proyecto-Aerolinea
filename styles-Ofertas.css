@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Fondo blanco */
+    min-height: 100vh; /* Asegura que el fondo cubra toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra verticalmente */
+    position: relative; /* Necesario para que los pseudo-elementos estén bien posicionados */
+
+    background-image: url('./IMAGES/FONDO.jpeg'); /* Cambia la ruta aquí */
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen quede estática */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Altura del triángulo */
+    background: rgb(97, 197, 255);
+    /* Color del triángulo */
+    clip-path: polygon(0 0, 100% 0, 50% 100%); /* Crea un triángulo apuntando hacia abajo */
+    z-index: -1; /* Asegura que el triángulo esté detrás del contenido */
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px; /* Altura de los trapecios */
+    z-index: -2; /* Asegura que los trapecios estén detrás del triángulo */
+    background: linear-gradient(to right, yellow 33.33%, blue 33.33%, blue 66.66%, red 66.66%);
+    /* Colores de la bandera de Colombia */
+    clip-path: polygon(0 0, 0 100%, 25% 100%, 10% 0), polygon(100% 0, 100% 100%, 75% 100%, 90% 0);
+    /* Crea dos trapecios en los lados */
+}
+
+/* Estilos para la barra de desplazamiento en Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #000000; /* Color del fondo de la barra de desplazamiento */
+  }
+  
+::-webkit-scrollbar-thumb {
+    background: #213257;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5); /* Sombra interna */
+}
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0d1833; /* Color del "pulgar" al pasar el mouse sobre él */
+  }
+  
+  /* Estilos para la barra de desplazamiento en Firefox */
+  scrollbar {
+    width: 12px;
+  }
+  
+  scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+
+header {
+    display: flex; /* Habilita flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+    padding: 20px; /* Espacio alrededor del header */
+    margin: 20px auto; /* Añade un margen para separar el header del contenido superior e inferior */
+}
+
+header img {
+    width: 250px; /* Asegura que la imagen se redimensione proporcionalmente */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+nav {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo transparente */
+    padding: 15px;
+    margin: 15px auto; /* Centra el nav horizontalmente */
+    border-radius: 15px; /* Bordes redondeados */
+    width: 25%; /* Ancho reducido */
+    text-align: center; /* Centra el contenido dentro del nav */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra las opciones horizontalmente */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #134479; /* Color del texto */
+    padding: 10px 20px;
+    font-size: 18px; /* Tamaño de fuente aumentado */
+    border-radius: 20px; /* Bordes redondeados */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative; /* Para el efecto de barra inferior */
+}
+
+.nav-menu a:hover {
+    color: #0056b3; /* Color del texto al pasar el cursor */
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #0056b3; /* Color de la barra inferior */
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+/* PRINCIPAL PAGINA*/
+
+
+.nuestras-ofertas{
+    margin-top: 80px;
+}
+
+.nuestras-ofertas h2{
+    margin: 0;
+    padding: 20px 0; /* Espacio interno del título */
+    color: rgb(0, 0, 0); /* Color del texto */
+    font-size: 250%; /* Tamaño del texto */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    width: 100%;
+}
+
+.hr-ofertas{
+    border: none;
+    height: 1px;
+    background-color: #000; /* Cambia el color de la línea */
+    margin: 10px; /* Añade espacio arriba y abajo de la línea */
+
+}
+
+.ofertas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.oferta {
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 35px 10px;
+    position: relative;
+}
+
+.oferta-boton {
+    border: none;
+    padding: 0;
+    background: none;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+}
+
+.oferta-boton img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.info {
+    background-color: rgb(216, 232, 255);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.info-adicional {
+    background-color: #f0f0f0;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -100%; /* Oculto inicialmente fuera del botón */
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+.oferta:hover .info-adicional {
+    bottom: 0; /* Desliza hacia arriba */
+    opacity: 1; /* Hace visible */
+}
+
+.oferta:hover {
+    transform: translateY(-10px);
+}
