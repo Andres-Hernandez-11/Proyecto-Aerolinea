@@ -239,3 +239,96 @@ nav {
     margin-top: 10px;
     align-self: center;
 }
+
+
+/* Estilos para los campos del formulario */
+.campo {
+    margin-bottom: 15px;
+    position: relative; /* Asegura que el dropdown se posicione en relación con este contenedor */
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilos para el dropdown de ciudades */
+.city-dropdown {
+    position: relative;
+}
+
+.city-dropdown input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.city-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 150px; /* Altura máxima del dropdown */
+    width: 100%;
+    z-index: 1;
+    top: 100%; /* Posiciona el dropdown justo debajo del campo de entrada */
+    left: 0;
+    margin-top: 2px; /* Espacio mínimo entre el campo de entrada y el dropdown */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+}
+
+/* Ajusta el estilo de los elementos dentro del dropdown */
+.city-dropdown-content div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.city-dropdown-content div:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+/* Estilos para el dropdown de pasajeros */
+.passenger-dropdown {
+    position: relative;
+}
+
+.passenger-dropdown input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.passenger-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 150px; /* Altura máxima del dropdown */
+    width: 100%;
+    z-index: 1;
+    top: 100%; /* Posiciona el dropdown justo debajo del campo de entrada */
+    left: 0;
+    margin-top: 2px; /* Espacio mínimo entre el campo de entrada y el dropdown */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+}
+
+/* Ajusta el estilo de los elementos dentro del dropdown */
+.passenger-dropdown-content div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.passenger-dropdown-content div:hover {
+    background-color: #f0f0f0;
+}
+
+/* Ocultar el campo de vuelta */
+.campo.hidden {
+    display: none;
+}

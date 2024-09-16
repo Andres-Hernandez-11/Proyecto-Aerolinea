@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinity Airways-Vuelos</title>
+    <title>Infinity Airways - Vuelos</title>
     <link rel="stylesheet" href="styles-Vuelos.css">
 </head>
 <body>
@@ -22,37 +22,47 @@
     <div class="buscador-vuelos">
         <div class="opciones-viaje">
             <label>
-                <input type="radio" name="tipo-viaje" checked>
+                <input type="radio" name="tipo-viaje" value="ida-vuelta" checked>
                 Ida y vuelta
             </label>
             <label>
-                <input type="radio" name="tipo-viaje">
+                <input type="radio" name="tipo-viaje" value="solo-ida">
                 Solo ida
             </label>
         </div>
         <div class="formulario-vuelo">
             <div class="campo">
-                <label>Origen</label>
-                <input type="text" placeholder="Origen">
+                <label>Ciudad Origen</label>
+                <div class="city-dropdown">
+                    <input type="text" id="city-input" placeholder="Ciudad Origen">
+                    <div id="city-dropdown" class="city-dropdown-content"></div>
+                </div>
             </div>
             <div class="campo">
-                <label>Destino</label>
-                <input type="text" placeholder="Destino">
+                <label>Ciudad Destino</label>
+                <div class="city-dropdown">
+                    <input type="text" id="destination-input" placeholder="Ciudad Destino">
+                    <div id="destination-dropdown" class="city-dropdown-content"></div>
+                </div>
             </div>
             <div class="campo">
-                <label>Ida</label>
-                <input type="date" value="2024-09-05">
+                <label>Fecha Ida</label>
+                <input type="date" id="date-departure">
             </div>
             <div class="campo">
-                <label>Vuelta</label>
-                <input type="date" value="2024-09-08">
+                <label>Fecha Vuelta</label>
+                <input type="date" id="date-return">
             </div>
             <div class="campo">
                 <label>Pasajeros</label>
-                <input type="number" min="1" value="1">
+                <div class="passenger-dropdown">
+                    <input type="number" id="passenger-input" placeholder="Número de pasajeros" readonly>
+                    <div id="passenger-dropdown" class="passenger-dropdown-content"></div>
+                </div>
             </div>
-            <button class="boton-buscar">Buscar</button>
+            <button id="search-button" class="boton-buscar">Buscar</button>
         </div>
     </div>
+    <script src="Scripts.js"></script>
 </body>
 </html>
