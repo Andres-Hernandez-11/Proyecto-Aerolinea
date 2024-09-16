@@ -79,11 +79,11 @@ body::after {
   
 
 header {
+    margin-top: 170px; /* Añade espacio suficiente para que el contenido no se superponga con la barra de navegación */  
     display: flex; /* Habilita flexbox para centrar el contenido */
     justify-content: center; /* Centra horizontalmente la imagen */
-    align-items: center; /* Centra verticalmente la imagen */
-    padding: 20px; /* Espacio alrededor del header */
-    margin: 20px auto; /* Añade un margen para separar el header del contenido superior e inferior */
+    padding: 50px; /* Espacio alrededor del header */
+    margin: 20px; /* Añade un margen para separar el header del contenido superior e inferior */
 }
 
 header img {
@@ -93,13 +93,17 @@ header img {
 
 
 nav {
+    position: fixed; /* Hace que el nav se fije en la ventana del navegador */
+    top: 0; /* Fija el nav en la parte superior */
+    left: 0; /* Fija el nav al lado izquierdo */
+    width: 100%; /* Asegura que la barra de navegación ocupe todo el ancho de la ventana */
     background-color: rgba(255, 255, 255, 0.8); /* Fondo transparente */
     padding: 15px;
-    margin: 15px auto; /* Centra el nav horizontalmente */
-    border-radius: 15px; /* Bordes redondeados */
-    width: 25%; /* Ancho reducido */
+    border-radius: 0 0 15px 15px; /* Bordes redondeados solo en la parte inferior */
     text-align: center; /* Centra el contenido dentro del nav */
     backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
+    z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añade una sombra para distinguirla del contenido */
 }
 
 .nav-menu {
